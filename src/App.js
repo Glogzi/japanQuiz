@@ -3,9 +3,11 @@ import { useState } from 'react';
 import Quiz from './quiz.js';
 import katakana_dict from "./katakana.json"
 import hiragana_dict from "./hiragana.json"
+import katakana_words_dict from "./katakana_words.json"
+
 function App() {
   const [courseName, setCourseName] = useState("main")
-  const buttons = ["katakana", "hiragana"]
+  const buttons = ["katakana", "hiragana", "katakana-words"]
   let buttons_map = buttons.map(el=>(
     <>
       <button className="menuButton" onClick={()=>{
@@ -31,6 +33,9 @@ function App() {
       </>}
       {courseName === "hiragana"&&<>
         <Quiz dict={hiragana_dict}/>
+      </>}
+      {courseName === "katakana-words"&&<>
+        <Quiz dict={katakana_words_dict}/>
       </>}
       
     </main>
