@@ -19,13 +19,17 @@ function Quiz({ dict }){
                 }}/><br/>
                 <span className="center"><button className="button" onClick={()=>{
                     setAddition("")
-                    if(el.answer === curr_input.toLowerCase()){
+                    if(curr_input.trim() === ""){
+                        return
+                    }
+                    if(el.answer === curr_input.toLowerCase().trim()){
                         setOutput("Gratulacje użytkowniku")
                         setOutputStyle({color: "#0F0",})
                         setRandomIndex(Math.floor(Math.random()*dict.length))
                         setCurInput("")
                     }else{
                         setOutput("źle")
+                        setOutputStyle({color: "#F00",})
                         let correctLetters = [];
                         for (let i = 0; i < el.answer.length; i++) {
                             if (el.answer[i] === curr_input[i].toLowerCase()) {
@@ -35,7 +39,6 @@ function Quiz({ dict }){
                         if (correctLetters.length > 0) {
                              setAddition(correctLetters.join(""));
                         }
-                        setOutputStyle({color: "#F00",})
                     }
                 }}>
                     Zgadnij
