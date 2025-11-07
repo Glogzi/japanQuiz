@@ -9,8 +9,7 @@ function Quiz({ dict }){
     const [random_index, setRandomIndex] = useState(Math.floor(Math.random()*dict.length))
     const [curr_input, setCurInput] = useState("")
     const [addition, setAddition] = useState("")
-    let katakana_map = dict.map(el=>(
-        <section>
+    let quiz_map = dict.map(el=>(<section>
             <p className="center questionP">{el.question}</p>
             <form onSubmit={(arg)=>{
                 arg.preventDefault()
@@ -27,11 +26,14 @@ function Quiz({ dict }){
                         setCurInput("")
                     }else{
                         setOutput("źle")
-                        if(el.answer[0] === curr_input[0]){
-                            setAddition(`(${el.answer[0]} - dobrze)`)
+                        let correctLetters = [];
+                        for (let i = 0; i < el.answer.length; i++) {
+                            if (el.answer[i] === curr_input[i]) {
+                                correctLetters.push(`(${el.answer[i]} - dobrze)`);
+                            }
                         }
-                        if(el.answer[1] === curr_input[1]){
-                            setAddition(`(${el.answer[1]} - dobrze)`)
+                        if (correctLetters.length > 0) {
+                             setAddition(correctLetters.join(""));
                         }
                         setOutputStyle({color: "#F00",})
                     }
@@ -48,7 +50,7 @@ function Quiz({ dict }){
     return(
     <>
         <section id="questionSection">
-        {katakana_map[random_index]}
+        {quiz_map[random_index]}
         </section>
     </>)
 }
