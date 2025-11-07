@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+}
+
+#questionSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: max-content;
+  height: 90vh;
+}
+.onHoverPoint:hover{
+  cursor: pointer;
+}
+.questionP{
+  padding: 10px;
+  font-size: 50px;
+}
+#questionSection *{
+  margin: 10px;
+}
+.textInput{
+  font-size: 30px;
+  text-align: center;
+}
+.button{
+  padding: 5px;
+  font-size: 30px;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 47, 255);
+  color: #FFF;
+  height: 10vh;
+}
+.output{
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1{
+  text-align: center;
+  font-size: 60px;
+}
+button:hover{
+  cursor: pointer;
+}
+button{
+  border-radius: 10px;
+}
+.menuButton{
+  font-size: 25px;
+  padding: 30px;
+  margin: 10px;
+}
