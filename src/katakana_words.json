@@ -99,5 +99,12 @@
   {"answer": "waapuro", "question": "ワープロ"},
   {"answer": "waishatsu", "question": "ワイシャツ"},
   {"answer": "zero", "question": "ゼロ"},
-  {"answer": "zubon", "question": "ズボン"}
+  {"answer": "zubon", "question": "ズボン"},
+  {"answer": "pan", "question": "パン"},
+  {"answer": "poorando", "question": "ポーランド"},
+  {"answer": "doitsu", "question": "ドイツ"},
+  {"answer": "aidoru", "question": "アイドル"},
+  {"answer": "arukooru", "question": "アルコール" },
+  {"answer": "saizu", "question": "サイズ"},
+  {"answer": "saikuringu", "question": "サイクリング"}
 ]

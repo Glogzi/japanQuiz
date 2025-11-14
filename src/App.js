@@ -4,6 +4,8 @@ import Quiz from './quiz.js';
 import katakana_dict from "./katakana.json"
 import hiragana_dict from "./hiragana.json"
 import katakana_words_dict from "./katakana_words.json"
+// import TranslateQuiz from './translateQuiz.js';
+// import JLPTN5p1 from './JLPTN5p1.json';
 
 function App() {
   const [courseName, setCourseName] = useState("main")
@@ -29,14 +31,17 @@ function App() {
         </section>
       </>}
       {courseName === "katakana"&&<>
-        <Quiz dict={katakana_dict}/>
+        <Quiz dict={katakana_dict} info='napisz jak się to czyta'/>
       </>}
       {courseName === "hiragana"&&<>
-        <Quiz dict={hiragana_dict}/>
+        <Quiz dict={hiragana_dict} info='napisz jak się to czyta'/>
       </>}
       {courseName === "katakana-words"&&<>
-        <Quiz dict={katakana_words_dict}/>
+        <Quiz dict={katakana_words_dict} info='napisz słowo w alfabecie romańskim (bez spacji)'/>
       </>}
+      {/* {courseName === "JLPTN5p1.json"&&<>
+        <TranslateQuiz dict={JLPTN5p1} info='przetłumacz słowo'/>
+      </>} */}
       
     </main>
     </>

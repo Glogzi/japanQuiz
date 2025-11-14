@@ -1,14 +1,24 @@
 
 import { useState } from "react"
 
+function reverseDict(element){
+    return {
+        question: element.answer,
+        answer: element.question
+    }
+}
 
-function Quiz({ dict }){
-    // const sign_array = dict.map(el => el.question)
+function Quiz({ dict, info=""}){
     const [output, setOutput] = useState("")
     const [output_style, setOutputStyle] = useState({})
     const [random_index, setRandomIndex] = useState(Math.floor(Math.random()*dict.length))
     const [curr_input, setCurInput] = useState("")
-    let quiz_map = dict.map(el=>(<section>
+    const [isReverse, setIsReverse] = useState(false)
+    const shownDict = isReverse
+    ? dict.map(item => reverseDict(item))
+    : dict;
+    let quiz_map = shownDict.map(el=>(<span>
+            <p className="center">{info}</p>
             <p className="center questionP">{el.question}</p>
             <form onSubmit={(arg)=>{
                 arg.preventDefault()
@@ -46,10 +56,16 @@ function Quiz({ dict }){
                     Zgadnij
                 </button></span>
             </form>
-            <span className="center">
+            <section className="center">
                 <p style={output_style} className="output">{output}</p>
-            </span>
-        </section>
+            </section>
+            <section className="center">
+                <input type="checkbox" id="reverse" onChange={(arg)=>{
+                    setIsReverse(arg.target.checked)
+                }}/>
+                <label htmlFor="reverse">reverse?</label>
+            </section>
+        </span>
     ))
     return(
     <>
