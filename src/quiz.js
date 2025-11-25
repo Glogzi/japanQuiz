@@ -63,7 +63,7 @@ function Quiz({ dict, info=""}){
                 <input type="checkbox" id="reverse" onChange={(arg)=>{
                     setIsReverse(arg.target.checked)
                 }}/>
-                <label htmlFor="reverse">odwrócić?</label>
+                <label htmlFor="reverse">zamienić?</label>
             </section>
         </span>
     ))
